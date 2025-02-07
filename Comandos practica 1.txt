@@ -1,0 +1,21 @@
+Comandos practica 1
+
+Sudo apt update 
+Sudo apt upgrade
+Sudo apt upgrade -y
+grep -h ^deb /etc/apt/sources.list 
+grep -h /etc/apt/sources.list.d/
+apt-cache search bashtop
+git clone https://github.com/aristocratos/bashtop.git
+cd bashtop/
+cd DEB
+sudo ./build
+sudo apt install bashtop
+cd ..
+cd ..
+bashtop
+bashtop
+sudo apt remove --purge bashtop
+sudo apt autoremove
+bashtop
+bashtop

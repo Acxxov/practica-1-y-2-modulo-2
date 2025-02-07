@@ -1,0 +1,18 @@
+Comandos practica 2
+
+crontab -e
+1(selecciono que lo quiero hacer desde el grub)
+0 23 * * * sudo apt update && sudo apt upgrade -y
+crontab -l
+crontab -e
+0 3 * * 0 sudo reboot
+ctrl+O-ctrl+x
+crontab -l
+Agregué 3 archivos vacíos en la carpeta /tmp con los siguientes comandos:
+touch /tmp/archivo1.txt
+touch /tmp/archivo2.log
+touch /tmp/archivo3.tmp
+ls -l /tmp
+echo "sudo rm -rf /tmp/*" | at now + 1 minute
+atq
+ls -l /tmp
