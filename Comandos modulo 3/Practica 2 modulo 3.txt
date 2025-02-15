@@ -1,0 +1,21 @@
+Practica 2 modulo 3
+
+
+nano script3.sh
+#!/bin/bash
+fecha=$(date +"%d-%m-%Y:%H:%M")
+tar -czvf /home/$(whoami)/backup_$fecha.tar.gz /home/$(whoami)/
+echo "Backup creado en: /home/$(whoami)/backup_$fecha.tar.gz"
+guardo y salgo
+chmod +x script3.sh
+./scrip´t3.sh
+
+
+
+nano script4.sh
+#!/bin/bash
+read -p "Nombre del archivo: " nombre
+ifconfig > /home/$(whoami)/Escritorio/$nombre.txt
+echo "Archivo creado en el Escritorio"
+chmod +x script4.sh
+./script4.sh

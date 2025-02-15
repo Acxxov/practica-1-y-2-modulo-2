@@ -1,0 +1,11 @@
+Practica 1 modulo 3
+
+Punto 1
+sudo nano /etc/default/grub
+sudo update-grub
+Sudo reboot
+
+Punto 2
+Reemplazo el que ro quiet splash por "rw init=/bin/bash"
+passwd root
+exec /sbin/init
