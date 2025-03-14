@@ -1,0 +1,21 @@
+# Instalar GPG2
+sudo apt update && sudo apt install gnupg2 -y
+
+# Generar un par de claves
+gpg2 --full-generate-key
+
+# Crear un archivo de prueba
+mkdir -p ~/cifrado && echo en los años mil seiscientos" > ~/cifrado/archivo.txt
+
+# Cifrar el archivo
+gpg2 -c ~/cifrado/archivo.txt
+
+# Ver el archivo cifrado
+cat ~/cifrado/archivo.txt.gpg
+
+# Descifrar el archivo
+gpg2 -d ~/cifrado/archivo.txt.gpg > ~/cifrado/archivo_descifrado.txt
+
+# Ver el archivo descifrado
+cat ~/cifrado/archivo_descifrado.txt
+@
