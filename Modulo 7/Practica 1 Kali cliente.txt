@@ -1,0 +1,23 @@
+# Instalar el cliente NFS
+sudo apt update && sudo apt install nfs-common -y
+
+# Crear el punto de montaje
+sudo mkdir -p /mnt/os3
+
+# Montar el directorio compartido
+sudo mount 192.168.240.130:/OS3 /mnt/os3
+# Reemplaza 192.168.240.130 con la IP del servidor
+
+# Verificar los archivos compartidos
+ls /mnt/os3
+# Debes ver los 100 archivos Adrian[1..100].txt
+
+# Configurar montaje automático
+sudo nano /etc/fstab
+# Agrega esta línea(Tienes que agregar la dirección ip de tu maquina servidor, no la que tengo puesta en este txt si estás usando esta practica de "tutorial"): 192.168.240.130:/OS3 /mnt/os3 nfs defaults 0 0
+# Guarda y cierra el archivo (Ctrl + O, Enter, Ctrl + X)
+
+# Reiniciar y verificar
+sudo reboot
+# Después del reinicio, verifica que el directorio se montó automáticamente
+ls /mnt/os3

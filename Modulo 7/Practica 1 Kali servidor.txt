@@ -1,0 +1,23 @@
+# Instalar NFS
+sudo apt update && sudo apt install nfs-kernel-server -y
+
+# Crear el directorio compartido
+sudo mkdir /OS3
+
+# Crear 100 archivos de prueba
+for i in {1..100}; do sudo touch /OS3/Adrian$i.txt; done
+
+# Asignar permisos
+sudo chmod -R 777 /OS3
+sudo chown nobody:nogroup /OS3
+
+# Configurar exports
+sudo nano /etc/exports
+# Agrega esta línea: /OS3 *(rw,sync,no_subtree_check)
+# Guarda y cierra el archivo (Ctrl + O, Enter, Ctrl + X)
+
+# Reiniciar el servicio NFS
+sudo systemctl restart nfs-kernel-server
+
+# Verificar la IP del servidor
+ip a
